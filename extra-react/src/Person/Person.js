@@ -1,4 +1,5 @@
 import React from 'react';
+import './Person.css';
 
 const person = ( props ) => { // making a functional component
     return (
