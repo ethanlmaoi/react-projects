@@ -5,6 +5,7 @@ const person = ( props ) => { // making a functional component
         <div>
             <p onClick = {props.click}>I'm {props.name} and I am {props.age}</p>
             <p>{props.children}</p>
+            <input type="text" onChange={} />
         </div>
     )
 };
