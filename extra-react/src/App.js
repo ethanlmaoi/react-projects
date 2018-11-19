@@ -6,9 +6,9 @@ class App extends Component {  // class-based component
   
   state = {
     persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Manu', age: 29 },
-      { name: 'Stephanie', age: 26 }
+      { id: 'asd' name: 'Max', age: 28 },
+      { id: 'sad' name: 'Manu', age: 29 },
+      { id: 'dsa' name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
     showPersons: false
@@ -40,8 +40,8 @@ class App extends Component {  // class-based component
   }
 
   deletePersonHandler = (personIndex) => {
-    // const persons = this.state.persons.slice(); // slice copies the array
-    const persons = [...this.state.person]
+    const persons = this.state.persons.slice(); // slice copies the array
+    // const persons = [...this.state.person]
     persons.splice(personIndex, 1); // removes one element front array
     this.setState({persons: persons}); // update the state
   }
@@ -65,7 +65,8 @@ class App extends Component {  // class-based component
             return <Person
               click={() => this.deletePersonHandler(index)}
               name={person.name}
-              age={person.age} />
+              age={person.age}
+              key={person.id} />
           })}
         </div>
       );
