@@ -6,9 +6,9 @@ class App extends Component {  // class-based component
   
   state = {
     persons: [
-      { id: 'asd' name: 'Max', age: 28 },
-      { id: 'sad' name: 'Manu', age: 29 },
-      { id: 'dsa' name: 'Stephanie', age: 26 }
+      { id: 'asd', name: 'Max', age: 28 },
+      { id: 'sad', name: 'Manu', age: 29 },
+      { id: 'dsa', name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
     showPersons: false
@@ -24,7 +24,7 @@ class App extends Component {  // class-based component
     } )
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = ( event ) => {
     this.setState( {
       persons: [
         { name: 'Max', age: 28 },
@@ -66,7 +66,8 @@ class App extends Component {  // class-based component
               click={() => this.deletePersonHandler(index)}
               name={person.name}
               age={person.age}
-              key={person.id} />
+              key={person.id}
+              changed={(event) => this.nameChangedHandler(event, person.id)} />
           })}
         </div>
       );
