@@ -57,7 +57,8 @@ class App extends Component {  // class-based component
   render() {
 
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -79,6 +80,8 @@ class App extends Component {  // class-based component
           })}
         </div>
       );
+
+      style.backgroundColor = 'red';
     }
 
     return (
@@ -90,7 +93,6 @@ class App extends Component {  // class-based component
         <button 
           style={style}
           onClick={this.togglePersonsHandler}>Switch Name</button>
-
         {persons}
       </div>
     );
